@@ -1,0 +1,80 @@
+* {
+	font-family: 'Roboto Slab', serif;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	background-color: #434750;
+}
+
+ul {
+	position: relative;
+	transform: skewY(-15deg);
+	transition: .5s;
+}
+
+ul li {
+	position: relative;
+	width: 200px;
+	background-color: #223046;
+	padding: 15px;
+	z-index: var(--i);
+	transition: .5s;
+}
+ul li::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: -40px;
+	width: 40px;
+	height: 100%;
+	background-color: #1b232f;
+	transform-origin: right;
+	transform: skewY(45deg);
+	transition: .5s;
+}
+ul li::after {
+	content: '';
+	position: absolute;
+	top: -40px;
+	left: 0;
+	width: 100%;
+	height: 40px;
+	background-color: #344560;
+	transform-origin: bottom;
+	transform: skewX(45deg);
+	transition: .5s;
+}
+ul li:hover {
+	background-color: #159481;
+	transform:  translateX(-50px);
+
+}
+ul li:hover::before {
+	background-color: #148776;
+}
+ul li:hover::after {
+	background-color: #1aac96;
+}
+ul li a {
+	text-decoration: none;
+	color: #999;
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: .05em;
+	transition: .5s;
+}
+
+ul li:hover a {
+	color: #fff;
+
+
+}
+ul li:last-child::after {
+	box-shadow: -100px 100px 50px #000;
+}
